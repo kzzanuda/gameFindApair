@@ -1,3 +1,5 @@
-# gameFindApair
+# gameFindPair
 
-Hello, it my first game on JavaScript!
+Hello, it's my first game on JavaScript!
+
+

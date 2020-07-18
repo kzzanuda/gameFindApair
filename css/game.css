@@ -1,0 +1,93 @@
+button {
+  line-height: 1;
+  max-width: 14em;
+  min-width: 12em;
+  border-radius: 3em;
+  height: 2em;
+  font-size: 1.7em;
+  background: rgb(90,17,139);
+  background: -webkit-linear-gradient(left, rgba(90,17,139,1) 0%, rgba(81,58,163,1) 35%, rgba(3,64,143,1) 100%);
+  background: -o-linear-gradient(left, rgba(90,17,139,1) 0%, rgba(81,58,163,1) 35%, rgba(3,64,143,1) 100%);
+  background: linear-gradient(to right, rgba(90,17,139,1) 0%, rgba(81,58,163,1) 35%, rgba(3,64,143,1) 100%);
+  color: #fff;
+  border: unset;
+  margin: 1em auto;
+  cursor: pointer;
+  font-family: "PressStart2p";
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  padding: 15px 0;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  box-shadow: unset;
+  transform: scale(0.95);
+}
+
+.card {
+  width: 134px;
+  height: 200px;
+  background: url('/img/short.png') 100% 100% no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  margin: 2em;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.invizeCard {
+  background: none !important;
+}
+
+.card:hover {
+  background: url('/img/hshort.png') no-repeat;
+  background-size: cover;
+  transform: scale(1.1);
+}
+
+.container-menu {
+  margin: 10% 10em;
+}
+
+.container-game {
+  margin: 40px 10em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+#menu {
+  -webkit-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  transition-duration: 2s;
+  display: flex;
+    flex-flow: column;
+}
+
+#main {
+  /* -webkit-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  transition-duration: 2s; */
+}
+@media (max-device-width: 1000px) {
+  .container-game {
+    margin: 40px 1em;
+  }
+  .card{
+    width:200px;
+    height:300px;
+    margin: 10px;
+  }
+}

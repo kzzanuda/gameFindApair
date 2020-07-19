@@ -17,9 +17,10 @@ gameSettings = {
 };
 
 function generateArrayCard (qCard = 6) {
-  let arrayCard = [];
+  let arrayCard = [],
+  qType = qCard/2;
 
-  function intRandom(min = 0, max = 3) {
+  function randomType(min = 0, max = qType - 1) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
   }
@@ -32,8 +33,8 @@ function generateArrayCard (qCard = 6) {
   }
 
   function fixArray() {
-    for (var i = 0; i < 4; i++) {
-      for (var j = 0; j < 4; j++) {
+    for (var i = 0; i < qType; i++) {
+      for (var j = 0; j < qType; j++) {
         if (checkArray(arrayCard,i).length % 2 != 0 && checkArray(arrayCard,j).length % 2 != 0 && i != j) {
           let first, second;
             for (var g = 0; g < arrayCard.length; g++) {
@@ -48,12 +49,16 @@ function generateArrayCard (qCard = 6) {
         }
       }
     }
-
-    for (let i = 0; i < qCard; i++) {
-      let newRand = intRandom(0,3);
-      arrayCard.push(newRand);
+    let i = 0;
+    while ( i < qCard ) {
+      let newCard = randomType(0, qType-1);
+      if (arrayCard.filter(item => item == newCard).length < 2) {
+        arrayCard.push(newCard);
+        i++;
+      }
     }
 
     fixArray();
+    console.log(arrayCard);
     return arrayCard;
 }

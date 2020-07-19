@@ -17,9 +17,12 @@
     <div class="container-game" id="main" style="display:none;">
 
     </div>
+    <div class="card" style="display:none;"></div>
 
     <script src="/js/jquery-3.5.1.min.js" charset="utf-8"></script>
-    <script src="/js/game-js.js" charset="utf-8"></script>
+    <script src="/js/game-logic.js" charset="utf-8"></script>
+    <script src="/js/game-board.js" charset="utf-8"></script>
+    <script src="/js/index.js" charset="utf-8"></script>
 
   </body>
 </html>

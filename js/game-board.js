@@ -5,11 +5,25 @@ let gameBoard = {
   thisLvlArray: generateArrayCard(this.cardOnBoard),
   showCard: function (card) {
     $(card).addClass('card-face');
-    $(card).append($(`<div class="type ${this.getClassThisCard(card)}"></div>`));
+    if (this.getClassThisCard(card) < 6) {
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)}"></div>`));
+    } else if (this.getClassThisCard(card) < 12) {
+      $(card).append($(`<div class="type type5"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-5}"></div>`));
+    } else if (this.getClassThisCard(card) < 18) {
+      $(card).append($(`<div class="type type4"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-11}"></div>`));
+    } else if (this.getClassThisCard(card) < 24) {
+      $(card).append($(`<div class="type type3"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-17}"></div>`));
+    } else if (this.getClassThisCard(card) < 30) {
+      $(card).append($(`<div class="type type2"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-23}"></div>`));
+    }
   },
   getClassThisCard: function (card) {
     let typeCard = this.thisLvlArray[$(card).index()];
-    return `type${typeCard}`;
+    return typeCard;
   },
   backBg: function (card1,card2) {
     this.blockClick = true;
@@ -46,6 +60,10 @@ let gameBoard = {
     this.nCheckCard = -1;
   },
   uWin: function() {
+    if (oGame.nLvl == 7) {
+      alert('Вы прошли игру, поздравляем!');
+      return;
+    }
     let nextLvl = confirm('Вы победили, играем следующий уровень?');
     if (nextLvl == true) {
       oGame.nLvl++;
@@ -69,9 +87,11 @@ let gameBoard = {
     $('.card').click(function () {
       if (!gameBoard.blockClick && !$(this).hasClass('invizeCard')) {
       let iCard = $(this).index();
-      gameBoard.showCard(this);
+      if (gameBoard.nCheckCard != iCard){
+        gameBoard.showCard(this);
+      }
       if (gameBoard.nCheckCard != -1 && gameBoard.nCheckCard != iCard) {
-        setTimeout(gameBoard.checkSecondCard(this),6000);
+        gameBoard.checkSecondCard(this);
       } else if (gameBoard.nCheckCard == -1){
         gameBoard.nCheckCard = iCard;
       }}

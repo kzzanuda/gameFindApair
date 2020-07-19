@@ -46,8 +46,22 @@ button:hover {
   -o-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+.card-face {
+  background: url('/img/style-1/face-card.png') 100% 100% no-repeat !important;
+  background-size: cover !important;
+}
+
+.type{
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
 
 .type0 {
   background: url('/img/style-1/0.png') !important;

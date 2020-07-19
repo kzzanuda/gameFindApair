@@ -59,6 +59,5 @@ function generateArrayCard (qCard = 6) {
     }
 
     fixArray();
-    console.log(arrayCard);
     return arrayCard;
 }

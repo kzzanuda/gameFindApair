@@ -8,15 +8,27 @@
   </head>
   <body>
 
-    <div class="container-menu" id="menu">
-        <button id="start">Start</button>
-        <button id="settings">Settings</button>
-        <button id="top">Highscores</button>
+    <div class="menu container-menu" id="menu">
+        <button id="butt-start">Start</button>
+        <button id="butt-settings">Settings</button>
+        <button id="butt-highscores">Highscores</button>
+    </div>
+
+    <div class="menu container-settings" id="settings" style="display:none;">
+      <p>Sound: <span id="sound"></span></p>
+      <p>Music: <span id="music"></span></p>
+    </div>
+
+    <div class="menu container-highscores" id="highscores" style="display:none;">
+
     </div>
 
     <div class="container-game" id="main" style="display:none;">
 
     </div>
+
+    <button id="back" style="display:none;">Back</button>
+
     <div class="card" style="display:none;"></div>
     <div class="type type0" style="display:none;"></div>
     <div class="type type1" style="display:none;"></div>

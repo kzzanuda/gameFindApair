@@ -4,6 +4,7 @@ let gameBoard = {
   cardOnBoard: oGame.gQuanityCard(),
   thisLvlArray: generateArrayCard(this.cardOnBoard),
   showCard: function (card) {
+    playSound(audio_check);
     $(card).addClass('card-face');
     if (this.getClassThisCard(card) < 6) {
       $(card).append($(`<div class="type type${this.getClassThisCard(card)}"></div>`));
@@ -96,5 +97,6 @@ let gameBoard = {
         gameBoard.nCheckCard = iCard;
       }}
     });
+    playSound(audio_place);
   },
 };

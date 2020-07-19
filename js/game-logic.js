@@ -12,7 +12,8 @@ let oGame = {
   },
 },
 gameSettings = {
-  sound: false,
+  sound: true,
+  music: false,
   styleBoard: 1,
 };
 

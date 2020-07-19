@@ -9,16 +9,16 @@ let gameBoard = {
       $(card).append($(`<div class="type type${this.getClassThisCard(card)}"></div>`));
     } else if (this.getClassThisCard(card) < 12) {
       $(card).append($(`<div class="type type5"></div>`));
-      $(card).append($(`<div class="type type${this.getClassThisCard(card)-5}"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-6}"></div>`));
     } else if (this.getClassThisCard(card) < 18) {
       $(card).append($(`<div class="type type4"></div>`));
-      $(card).append($(`<div class="type type${this.getClassThisCard(card)-11}"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-12}"></div>`));
     } else if (this.getClassThisCard(card) < 24) {
       $(card).append($(`<div class="type type3"></div>`));
-      $(card).append($(`<div class="type type${this.getClassThisCard(card)-17}"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-18}"></div>`));
     } else if (this.getClassThisCard(card) < 30) {
       $(card).append($(`<div class="type type2"></div>`));
-      $(card).append($(`<div class="type type${this.getClassThisCard(card)-23}"></div>`));
+      $(card).append($(`<div class="type type${this.getClassThisCard(card)-24}"></div>`));
     }
   },
   getClassThisCard: function (card) {

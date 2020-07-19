@@ -2,9 +2,10 @@ let gameBoard = {
   blockClick: false,
   nCheckCard: -1,
   cardOnBoard: oGame.gQuanityCard(),
-  thisLvlArray: oGame.gArrayCard(),
+  thisLvlArray: generateArrayCard(this.cardOnBoard),
   showCard: function (card) {
-    $(card).addClass(this.getClassThisCard(card));
+    $(card).addClass('card-face');
+    $(card).append($(`<div class="type ${this.getClassThisCard(card)}"></div>`));
   },
   getClassThisCard: function (card) {
     let typeCard = this.thisLvlArray[$(card).index()];
@@ -13,8 +14,10 @@ let gameBoard = {
   backBg: function (card1,card2) {
     this.blockClick = true;
     function func() {
-      $(card1).removeClass(gameBoard.getClassThisCard(card1));
-      $(card2).removeClass(gameBoard.getClassThisCard(card2));
+      $(card1).children().remove();
+      $(card1).removeClass('card-face');
+      $(card2).children().remove();
+      $(card2).removeClass('card-face');
       gameBoard.blockClick = false;
     }
     setTimeout(func,1500,card1,card2);
@@ -22,7 +25,9 @@ let gameBoard = {
   setInvizeCard: function (card1,card2) {
     this.blockClick = true;
     function f() {
+      $(card1).children().remove();
       $(card1).addClass('invizeCard');
+      $(card2).children().remove();
       $(card2).addClass('invizeCard');
       gameBoard.blockClick = false;
     }
@@ -40,11 +45,6 @@ let gameBoard = {
     }
     this.nCheckCard = -1;
   },
-  resetBoard: function () {
-    $('.card').remove();
-    $('.invizeCard').remove();
-    oGame.cardOnBoard = oGame.gQuanityCard(oGame.nLvl);
-  },
   uWin: function() {
     let nextLvl = confirm('Вы победили, играем следующий уровень?');
     if (nextLvl == true) {
@@ -52,9 +52,10 @@ let gameBoard = {
       this.nCheckCard = -1;
       $('.card').remove();
       $('.invizeCard').remove();
-      oGame.cardOnBoard = oGame.gQuanityCard(oGame.nLvl);
+      gameBoard.cardOnBoard = oGame.gQuanityCard(oGame.nLvl);
       gameBoard.addCard(oGame.nLvl);
-      oGame.gArrayCard(oGame.nLvl);
+      gameBoard.thisLvlArray = generateArrayCard(gameBoard.cardOnBoard);
+      gameBoard.clickOnCard();
     } else {
       alert('Goodby, mthrfck');
     }

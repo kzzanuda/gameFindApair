@@ -18,6 +18,12 @@
 
     </div>
     <div class="card" style="display:none;"></div>
+    <div class="type type0" style="display:none;"></div>
+    <div class="type type1" style="display:none;"></div>
+    <div class="type type2" style="display:none;"></div>
+    <div class="type type3" style="display:none;"></div>
+    <div class="type type4" style="display:none;"></div>
+    <div class="type type5" style="display:none;"></div>
 
     <script src="/js/jquery-3.5.1.min.js" charset="utf-8"></script>
     <script src="/js/game-logic.js" charset="utf-8"></script>

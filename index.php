@@ -30,13 +30,13 @@
     </div>
 
     <button id="back" style="display:none;">Back</button>
-    
-    <div class="container-inside-menu" id="inside-menu"  style="display:none;">
+
+    <div class="menu container-inside-menu" id="inside-menu"  style="display:none;">
       <p id="messageLvl"></p>
       <button id="go-next">Next level</button>
-      <button id="end-game">End the game</button>
+      <button id="end-game">End game</button>
     </div>
-    
+
     <div class="card" style="display:none;"></div>
     <div class="type type0" style="display:none;"></div>
     <div class="type type1" style="display:none;"></div>

@@ -10,8 +10,10 @@
 
     <div class="menu container-menu" id="menu">
         <button id="butt-start">Start</button>
+        <button id="new-game" style="display:none;">New game</button>
+        <button id="continue" style="display:none;">Continue</button>
         <button id="butt-settings">Settings</button>
-        <button id="butt-highscores">Highscores</button>
+        <button id="butt-highscores" style="display:none;">Highscores</button>
     </div>
 
     <div class="menu container-settings" id="settings" style="display:none;">

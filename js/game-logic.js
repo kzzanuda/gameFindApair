@@ -1,5 +1,6 @@
 let oGame = {
   nLvl: 1,
+  newGame: true,
   contGame: $(".container-game"),
   divCard: $("<div class='card'></div>"),
   gQuanityCard: function () {

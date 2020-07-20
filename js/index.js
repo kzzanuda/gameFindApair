@@ -1,8 +1,28 @@
 $(document).ready(function() {
   $('#butt-start').click(function() {
+    hideMenu();
+    if (oGame.newGame == true) {
+      oGame.newGame = false;
+      gameBoard.addCard(oGame.nLvl);
+      gameBoard.clickOnCard();
+      setTimeout(changeButtonOnMain,1000);
+    }
+  });
+
+  $('#continue').click(function() {
     $("#menu").fadeOut(500);
     setTimeout("$('#main').fadeIn(600);$('#back').fadeIn(600);",500);
+  });
+
+  $('#new-game').click(function() {
+    hideMenu();
+    oGame.nLvl = 1;
+    gameBoard.nCheckCard = -1;
+    $('.card').remove();
+    $('.invizeCard').remove();
+    gameBoard.cardOnBoard = oGame.gQuanityCard(oGame.nLvl);
     gameBoard.addCard(oGame.nLvl);
+    gameBoard.thisLvlArray = generateArrayCard(gameBoard.cardOnBoard);
     gameBoard.clickOnCard();
   });
 
@@ -52,4 +72,15 @@ function playSound(sound) {
   if (gameSettings.sound == true) {
     sound.play();
   }
+}
+
+function changeButtonOnMain() {
+  $('#butt-start').hide();
+  $('#continue').show();
+  $('#new-game').show();
+}
+
+function hideMenu() {
+  $("#menu").fadeOut(500);
+  setTimeout("$('#main').fadeIn(600);$('#back').fadeIn(600);",500);
 }

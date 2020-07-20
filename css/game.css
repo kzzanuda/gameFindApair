@@ -1,5 +1,6 @@
 body {
-  background: url('/img/style-1/bg-v1.jpg') center;
+  background: url('/img/style-1/bg-v1.jpg') 50% 100%;
+  font-family: "PressStart2p";
 }
 
 button {
@@ -103,8 +104,26 @@ button:hover {
   transform: scale(1.1);
 }
 
-.container-menu {
+.menu {
   margin: 10% 10em;
+  display: flex;
+  flex-flow: column;
+}
+
+.container-settings {
+  background: #fff;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+.container-settings p {
+  margin-bottom: 20px;
+}
+
+.container-settings p span {
+  cursor: pointer;
 }
 
 .container-game {
@@ -120,8 +139,6 @@ button:hover {
   -o-transition-duration: 2s;
   -moz-transition-duration: 2s;
   transition-duration: 2s;
-  display: flex;
-    flex-flow: column;
 }
 
 #main {
@@ -130,6 +147,13 @@ button:hover {
   -moz-transition-duration: 2s;
   transition-duration: 2s; */
 }
+
+#back {
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+}
+
 @media (max-device-width: 1000px) {
   .container-game {
     margin: 40px 1em;

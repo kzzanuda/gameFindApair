@@ -1,5 +1,6 @@
 let oGame = {
   nLvl: 1,
+  newGame: true,
   contGame: $(".container-game"),
   divCard: $("<div class='card'></div>"),
   gQuanityCard: function () {
@@ -12,7 +13,8 @@ let oGame = {
   },
 },
 gameSettings = {
-  sound: false,
+  sound: true,
+  music: false,
   styleBoard: 1,
 };
 

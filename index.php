@@ -8,15 +8,35 @@
   </head>
   <body>
 
-    <div class="container-menu" id="menu">
-        <button id="start">Start</button>
-        <button id="settings">Settings</button>
-        <button id="top">Highscores</button>
+    <div class="menu container-menu" id="menu">
+        <button id="butt-start">Start</button>
+        <button id="new-game" style="display:none;">New game</button>
+        <button id="continue" style="display:none;">Continue</button>
+        <button id="butt-settings">Settings</button>
+        <button id="butt-highscores" style="display:none;">Highscores</button>
+    </div>
+
+    <div class="menu container-settings" id="settings" style="display:none;">
+      <p>Sound: <span id="sound"></span></p>
+      <p>Music: <span id="music"></span></p>
+    </div>
+
+    <div class="menu container-highscores" id="highscores" style="display:none;">
+
     </div>
 
     <div class="container-game" id="main" style="display:none;">
 
     </div>
+
+    <button id="back" style="display:none;">Back</button>
+
+    <div class="menu container-inside-menu" id="inside-menu"  style="display:none;">
+      <p id="messageLvl"></p>
+      <button id="go-next">Next level</button>
+      <button id="end-game">End game</button>
+    </div>
+
     <div class="card" style="display:none;"></div>
     <div class="type type0" style="display:none;"></div>
     <div class="type type1" style="display:none;"></div>

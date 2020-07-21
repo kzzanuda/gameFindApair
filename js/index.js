@@ -87,9 +87,9 @@ function playMusic(music) {
 }
 
 function changeButtonOnMain() {
-  $('#butt-start').change();
-  $('#continue').change();
-  $('#new-game').change();
+  $('#butt-start').toggle();
+  $('#continue').toggle();
+  $('#new-game').toggle();
 }
 
 function hideMenu() {

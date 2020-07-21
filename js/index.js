@@ -31,7 +31,6 @@ $(document).ready(function() {
     $("#settings").fadeOut(500);
     $("#highscores").fadeOut(500);
     $('#main').fadeOut(500);
-    $('#inside-menu').fadeOut(400);
     setTimeout("$('#menu').fadeIn(600);",500);
   });
 
@@ -87,9 +86,9 @@ function playMusic(music) {
 }
 
 function changeButtonOnMain() {
-  $('#butt-start').change();
-  $('#continue').change();
-  $('#new-game').change();
+  $('#butt-start').hide();
+  $('#continue').show();
+  $('#new-game').show();
 }
 
 function hideMenu() {

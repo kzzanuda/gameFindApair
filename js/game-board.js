@@ -61,40 +61,20 @@ let gameBoard = {
     this.nCheckCard = -1;
   },
   uWin: function() {
-    let blockButt = false;
-    if (oGame.getLvl() == 7) {
+    if (oGame.nLvl == 7) {
       oGame.contGame.fadeOut(500);
       $('#messageLvl').text('You WIN!!!');
-      $('#go-next').hide();
       setTimeout("$('#inside-menu').fadeIn(600);",500);
     } else {
-      oGame.contGame.fadeOut(300);
-      $('#back').fadeOut(300);
-      $('#messageLvl').text('Level ' + oGame.getLvl() + ' completed');
-      setTimeout("$('#inside-menu').fadeIn(500);",300);
+      oGame.contGame.fadeOut(500);
+      $('#messageLvl').text('Level ' + oGame.nLvl + ' completed');
+      setTimeout("$('#inside-menu').fadeIn(600);",500);
       $('#go-next').click(function() {
-      if (blockButt != true) {
-          blockButt = true;
-          gameBoard.startNextLvl();
-          $('#inside-menu').fadeOut(500);
-            setTimeout("oGame.contGame.fadeIn(600);$('#back').fadeIn(600);",500);
-        }
+        gameBoard.startNextLvl();
+        $('#inside-menu').fadeOut(500);
+          setTimeout("oGame.contGame.fadeIn(600);",500);
       });
     }
-    $('#end-game').click(function () {
-      if (blockButt != true) {
-        blockButt = true;
-        oGame.resetLvl;
-        oGame.newGame = true;
-        $('.card').remove();
-        $('.invizeCard').remove();
-        changeButtonOnMain();
-        gameBoard.cardOnBoard = oGame.gQuanityCard(oGame.getLvl());
-        gameBoard.thisLvlArray = generateArrayCard(gameBoard.cardOnBoard);
-        $('#inside-menu').fadeOut(500);
-        setTimeout('$("#menu").fadeIn(600)',500);
-      }
-    });
   },
   startNextLvl: function() {
     oGame.lvlPlus();

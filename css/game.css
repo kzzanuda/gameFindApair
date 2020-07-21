@@ -110,14 +110,12 @@ button:hover {
   flex-flow: column;
 }
 
-.container-settings, .container-inside-menu {
+.container-settings {
   background: #fff;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
   padding: 2em;
-  margin: 10% 25%;
-  box-shadow: inset 0 0 10px;
 }
 
 .container-settings p {
@@ -132,7 +130,7 @@ button:hover {
   margin: 40px 10em;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
   flex-grow: 1;
 }
 
@@ -153,7 +151,7 @@ button:hover {
 #back {
   position: fixed;
   bottom: 0px;
-  left: 10vw;
+  left: 40px;
 }
 
 @media (max-device-width: 1000px) {

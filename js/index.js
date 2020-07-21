@@ -3,7 +3,7 @@ $(document).ready(function() {
     hideMenu();
     if (oGame.newGame == true) {
       oGame.newGame = false;
-      gameBoard.addCard(oGame.nLvl);
+      gameBoard.addCard(oGame.getLvl());
       gameBoard.clickOnCard();
       setTimeout(changeButtonOnMain,1000);
     }
@@ -16,12 +16,12 @@ $(document).ready(function() {
 
   $('#new-game').click(function() {
     hideMenu();
-    oGame.nLvl = 1;
+    oGame.resetLvl();
     gameBoard.nCheckCard = -1;
     $('.card').remove();
     $('.invizeCard').remove();
-    gameBoard.cardOnBoard = oGame.gQuanityCard(oGame.nLvl);
-    gameBoard.addCard(oGame.nLvl);
+    gameBoard.cardOnBoard = oGame.gQuanityCard(oGame.getLvl());
+    gameBoard.addCard(oGame.getLvl());
     gameBoard.thisLvlArray = generateArrayCard(gameBoard.cardOnBoard);
     gameBoard.clickOnCard();
   });

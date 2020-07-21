@@ -1,10 +1,19 @@
 let oGame = {
-  nLvl: 1,
+  _nLvl: 1,
+  lvlPlus: function() {
+    this._nLvl++;
+  },
+  getLvl: function() {
+    return this._nLvl;
+  },
+  resetLvl: function() {
+    this._nLvl = 1;
+  },
   newGame: true,
   contGame: $(".container-game"),
   divCard: $("<div class='card'></div>"),
   gQuanityCard: function () {
-    let qCard = this.nLvl * 6 - this.nLvl;
+    let qCard = this._nLvl * 6 - this._nLvl;
     if (qCard % 2 != 0) {
       qCard++;
     }

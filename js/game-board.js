@@ -52,6 +52,7 @@ let gameBoard = {
     if (this.thisLvlArray[$(card).index()] == this.thisLvlArray[this.nCheckCard]) {
       this.setInvizeCard(card,$('.card')[this.nCheckCard]);
       this.cardOnBoard -= 2;
+      playSound(audio_dropCard);
       if (this.cardOnBoard == 0) {
         setTimeout(this.uWin,500);
       }
@@ -62,6 +63,7 @@ let gameBoard = {
   },
   uWin: function() {
     let blockButt = false;
+    $('#back').fadeOut(300);
     if (oGame.getLvl() == 7) {
       oGame.contGame.fadeOut(500);
       $('#messageLvl').text('You WIN!!!');
@@ -69,7 +71,6 @@ let gameBoard = {
       setTimeout("$('#inside-menu').fadeIn(600);",500);
     } else {
       oGame.contGame.fadeOut(300);
-      $('#back').fadeOut(300);
       $('#messageLvl').text('Level ' + oGame.getLvl() + ' completed');
       setTimeout("$('#inside-menu').fadeIn(500);",300);
       $('#go-next').click(function() {

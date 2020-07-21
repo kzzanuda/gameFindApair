@@ -61,6 +61,7 @@ $(document).ready(function() {
 let audio_place = new Audio ('/audio/take_card_on_table.mp3'),
 audio_check = new Audio ('/audio/check_card.mp3'),
 audio_click = new Audio ('/audio/click.mp3'),
+audio_dropCard = new Audio ('/audio/drop_card.mp3'),
 music_one = new Audio('/audio/loop1.mp3');
 
 function outPutSetting(setting) {

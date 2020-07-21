@@ -12,6 +12,7 @@ $(document).ready(function() {
   $('#continue').click(function() {
     $("#menu").fadeOut(500);
     setTimeout("$('#main').fadeIn(600);$('#back').fadeIn(600);",500);
+    Player.startTimer();
   });
 
   $('#new-game').click(function() {
@@ -27,6 +28,7 @@ $(document).ready(function() {
   });
 
   $('#back').click(function() {
+    Player.stopTimer();
     $(this).fadeOut(500);
     $("#settings").fadeOut(500);
     $("#highscores").fadeOut(500);

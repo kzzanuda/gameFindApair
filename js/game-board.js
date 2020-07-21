@@ -35,7 +35,7 @@ let gameBoard = {
       $(card2).removeClass('card-face');
       gameBoard.blockClick = false;
     }
-    setTimeout(func,1500,card1,card2);
+    setTimeout(func,800,card1,card2);
   },
   setInvizeCard: function (card1,card2) {
     this.blockClick = true;
@@ -61,6 +61,10 @@ let gameBoard = {
     this.nCheckCard = -1;
   },
   uWin: function() {
+    Player.stopTimer();
+    Player.setNewScore();
+    Player.resetTime();
+    console.log("Score: "+Player.getScore());
     let blockButt = false;
     if (oGame.getLvl() == 7) {
       oGame.contGame.fadeOut(500);
@@ -110,6 +114,7 @@ let gameBoard = {
     for (var i = 0; i < oGame.gQuanityCard(oGame.getLvl()); i++) {
       oGame.contGame.append(oGame.divCard.clone());
     };
+    setTimeout("Player.startTimer()",500);
   },
   clickOnCard: function () {
     $('.card').click(function () {

@@ -33,6 +33,7 @@
 
     <div class="menu container-inside-menu" id="inside-menu"  style="display:none;">
       <p id="messageLvl"></p>
+      <p id="messageScore"></p>
       <button id="go-next">Next level</button>
       <button id="end-game">End game</button>
     </div>

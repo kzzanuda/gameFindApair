@@ -13,14 +13,20 @@ let oGame = {
   contGame: $(".container-game"),
   divCard: $("<div class='card'></div>"),
   gQuanityCard: function () {
-    let qCard = this._nLvl * 6 - this._nLvl;
+    let qCard = this._nLvl * 4 - this._nLvl;
     if (qCard % 2 != 0) {
       qCard++;
     }
-    this.cardOnBoard = qCard;
+    if (qCard > 24) {
+      qCard = 24;
+    }
+    if (qCard < 10) {
+      qCard += 2;
+    }
     return qCard;
   },
 },
+
 gameSettings = {
   sound: true,
   music: false,

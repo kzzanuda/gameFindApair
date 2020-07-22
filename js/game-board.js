@@ -66,7 +66,7 @@ let gameBoard = {
     Player.resetTime();
     console.log("Score: "+Player.getScore());
     let blockButt = false;
-    if (oGame.getLvl() == 7) {
+    if (oGame.getLvl() == 10 || oGame.getLvl() > 10) {
       oGame.contGame.fadeOut(500);
       $('#messageLvl').text('You WIN!!!');
       $('#go-next').hide();
@@ -75,6 +75,7 @@ let gameBoard = {
       oGame.contGame.fadeOut(300);
       $('#back').fadeOut(300);
       $('#messageLvl').text('Level ' + oGame.getLvl() + ' completed');
+      $('#messageScore').text('Your score: ' + Player.getScore());
       setTimeout("$('#inside-menu').fadeIn(500);",300);
       $('#go-next').click(function() {
       if (blockButt != true) {
@@ -109,6 +110,7 @@ let gameBoard = {
     gameBoard.addCard(oGame.getLvl());
     gameBoard.thisLvlArray = generateArrayCard(gameBoard.cardOnBoard);
     gameBoard.clickOnCard();
+    this.showAllCard();
   },
   addCard: function () {
     for (var i = 0; i < oGame.gQuanityCard(oGame.getLvl()); i++) {
@@ -131,4 +133,31 @@ let gameBoard = {
     });
     playSound(audio_place);
   },
+  showAllCard: function() {
+    gameBoard.blockClick = true;
+    $('.card').addClass('card-face');
+    $('.card').each(function( index ) {
+      if (gameBoard.getClassThisCard(this) < 6) {
+        $(this).append($(`<div class="type type${gameBoard.getClassThisCard(this)}"></div>`));
+      } else if (gameBoard.getClassThisCard(this) < 12) {
+        $(this).append($(`<div class="type type5"></div>`));
+        $(this).append($(`<div class="type type${gameBoard.getClassThisCard(this)-6}"></div>`));
+      } else if (gameBoard.getClassThisCard(this) < 18) {
+        $(this).append($(`<div class="type type4"></div>`));
+        $(this).append($(`<div class="type type${gameBoard.getClassThisCard(this)-12}"></div>`));
+      } else if (gameBoard.getClassThisCard(this) < 24) {
+        $(this).append($(`<div class="type type3"></div>`));
+        $(this).append($(`<div class="type type${gameBoard.getClassThisCard(this)-18}"></div>`));
+      } else if (gameBoard.getClassThisCard(this) < 30) {
+        $(this).append($(`<div class="type type2"></div>`));
+        $(this).append($(`<div class="type type${gameBoard.getClassThisCard(this)-24}"></div>`));
+      }
+    });
+    function hideAll() {
+      $('.card').children().remove();
+      $('.card').removeClass('card-face');
+      gameBoard.blockClick = false;
+    }
+    setTimeout(hideAll, Math.log(oGame.getLvl() * 3) * 1000);
+  }
 };

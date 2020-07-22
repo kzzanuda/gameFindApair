@@ -156,7 +156,10 @@ button:hover {
   left: 10vw;
 }
 
-@media (max-device-width: 1000px) {
+@media (max-width: 1000px) {
+  .container-settings, .container-inside-menu {
+    font-size: 3rem;
+  }
   .container-game {
     margin: 40px 1em;
   }
@@ -168,5 +171,11 @@ button:hover {
   .type{
     width: 100px;
     height: 100px;
+  }
+  .menu{
+    margin: 5em 0;
+  }
+  body{
+    font-size: 2.5rem;
   }
 }

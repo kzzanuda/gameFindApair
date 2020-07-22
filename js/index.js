@@ -5,6 +5,7 @@ $(document).ready(function() {
       oGame.newGame = false;
       gameBoard.addCard(oGame.getLvl());
       gameBoard.clickOnCard();
+      gameBoard.showAllCard();
       setTimeout(changeButtonOnMain,1000);
     }
   });
@@ -25,6 +26,7 @@ $(document).ready(function() {
     gameBoard.addCard(oGame.getLvl());
     gameBoard.thisLvlArray = generateArrayCard(gameBoard.cardOnBoard);
     gameBoard.clickOnCard();
+    gameBoard.showAllCard();
   });
 
   $('#back').click(function() {
